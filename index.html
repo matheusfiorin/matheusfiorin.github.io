@@ -1,264 +1,88 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="Matheus Barão Fiorin" />
+    <title>JSON to Dart</title>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-</head>
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/github.css" />
+  </head>
 
-<body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+  <body class="bg-light">
+    <div class="container">
+      <div class="py-5 text-center">
+        <h2>JSON to Dart</h2>
+        <p class="lead">
+          Paste your JSON in the textarea below, click convert and get your Dart
+          classes for free.
+        </p>
+      </div>
+      <div class="row code-row">
+        <div class="col-12 col-md-4">
+          <form onsubmit="return false;">
+            <div class="form-group">
+              <label for="jsonEditor">JSON</label>
+              <div id="jsonEditor"></div>
+            </div>
+            <input
+              class="form-control mb-2"
+              id="dartClassName"
+              placeholder="Your dart class name goes here"
+            />
+            <button type="submit" class="btn btn-primary">Generate Dart</button>
+            <label
+              ><input type="checkbox" id="private-fields" /> Use private
+              fields</label
+            >
+            <button id="copy-clipboard" class="mt-2 btn btn-secondary" disabled>
+              Copy Dart code to clipboard
+            </button>
+          </form>
         </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
+        <div class="col-12 col-md-8">
+          <b id="invalid-dart" style="display: none;"
+            >The Dart code generated is invalid</b
+          >
+          <pre><code class="dart"></code></pre>
+          <textarea
+            style="position: fixed; opacity: 0;"
+            id="hidden-dart"
+          ></textarea>
+        </div>
+      </div>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">Handcrafted by Matheus Barão Fiorin</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="https://github.com/matheusfiorin">Github</a>
+          </li>
         </ul>
-    </header>
-    <!-- End header -->
-
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Matheus Barão Fiorin</h1>
-            <h2>Student & Senior Developer</h2>
-            <a href="#" class="btn-rounded-white">Download Resume</a>
-        </div>
-        <!-- End #lead-content -->
-
-        <div id="lead-overlay"></div>
-
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
+      </footer>
     </div>
-    <!-- End #lead -->
-
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="heading">About Me</h2>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                        Born in Monte Alto, now I am 19 years old and I'm a very talented person, with a strong
-                        personality and ready to accept challenges. I'm a quick learner and I do believe that logic is
-                        the most important skill that a developer must have. I'm a nice person to work with, very
-                        responsible and self-taught in most of my doubts and wills.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End #about -->
-
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-            <div data-date="August 2016 – September 2016">
-                <h3>Microsoft</h3>
-                <h4>Cybersecurity & Leadership Course</h4>
-                <p>
-                    I have learned how to manage people, to find out their patterns and to collaborate amongst our team to
-                    raise the efficiency. In the Cybersecurity part I was taught methods to preserve the enterprise
-                    data integrity.
-                </p>
-            </div>
-
-            <div data-date="September 2016 – November 2016">
-                <h3>Local Courses</h3>
-                <h4>Photoshop, Illustrator, HTML, CSS3 and JavaScript</h4>
-                <p>
-                    I took several courses in a two-month period, envolving a lot of tools and frameworks and through them I've learned some pretty
-                    advanced techniques for Graphic Design (I already knew the basic and intermediate because of my
-                    self-taught studies) - and also some intermediate knowledge of fullstack development.
-                </p>
-            </div>
-
-            <div data-date="November 2016 – March 2018">
-                <h3>Self-Employed</h3>
-                <h4>Graphic Design & Development Jobs</h4>
-                <p>
-                    For about 17 months I was doing some freelancer jobs to make some money and to learn from them. I
-                    worked with a lot of people, with a lot of different projects, like Photoshop & Illustrator media
-                    creation until Python and NodeJS Rest API's. I was working as a Fullstack Developer and as a
-                    Graphic Designer, so I've developed advanced skills on those areas.
-                </p>
-            </div>
-
-            <div data-date="March 2018 – Current Moment">
-                <h3>Accesys Solutions</h3>
-                <h4>Senior Developer</h4>
-                <p>
-                    On my first months inside Accesys I was on the support team. From that position I started studying Delphi -
-                    Object Pascal - and they promoted me to be a Junior Developer. Here on development, I was
-                    responsible for making some changes in the current system we have. A couple months later, I
-                    was promoted to be a Senior Developer of a small team - that nowadays have 2 more developers - and I'm also
-                    responsible for the creation and manteinance of Flutter App's, as well as publishing them on Google Play
-                    and Apple Store.
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- End #experience -->
-
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="education-block">
-            <h3>SESI 227</h3>
-            <span class="education-date">Jan 2006 - Dec 2017</span>
-            <h4>Elementary & High School</h4>
-            <p>
-                I've studied my entire life on a private school, with very good grades and amongst the most engaged
-                student - from music to extra class projects. I also won from voting an educational course from Microsoft about Cybersecurity & Leadership.
-            </p>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block">
-            <h3>SENAI</h3>
-            <span class="education-date">Aug 2015 - Jun 2016</span>
-            <h4>Electrician apprentice & Network Infrastructure</h4>
-            <p>
-                I've studied a lot of techniques of basic and intermediate electrician's routine, and also network
-                infrastructure.
-            </p>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block">
-            <h3>FATEC Taquaritinga</h3>
-            <span class="education-date">Jan 2018 - Dec 2021</span>
-            <h4>Bachelor of Science in System Analysis and Development</h4>
-            <p>
-                I'm on the half-road to finish my first graduation, and I'm very focused on being the best student as
-                possible. My grades vary from 8 to 10 and I'm writing a scientific article based on User Experience.
-            </p>
-        </div>
-        <!-- End .education-block -->
-    </div>
-    <!-- End #education -->
-
-    <div id="skills" class="background-alt">
-        <h2 class="heading">Skills</h2>
-        <ul>
-            <li>Flutter</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Go</li>
-            <li>Node.js</li>
-            <li>AngularJS</li>
-            <li>Java</li>
-            <li>C</li>
-            <li>C#</li>
-            <li>C++</li>
-            <li>Scala</li>
-            <li>VueJS</li>
-            <li>Photoshop</li>
-            <li>Illustrator</li>
-            <li>Branding</li>
-            <li>Web Design</li>
-            <li>Google ADS</li>
-            <li>Mail Marketing</li>
-            <li>Linux</li>
-            <li>Unix</li>
-            <li>MacOS</li>
-            <li>Windows Server</li>
-            <li>MariaDB</li>
-            <li>MySQL</li>
-            <li>SQL Server</li>
-            <li>Mongoose</li>
-            <li>DynamoDB</li>
-        </ul>
-    </div>
-    <!-- End #skills -->
-
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/email@email.com">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        <!-- End #contact-form -->
-    </div>
-    <!-- End #contact -->
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Copyright &copy; 2019 MATHEUS BARÃO FIORIN
-                    </p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/matheusfiorin" target="_blank"><i class="fa fa-github"
-                                    aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/matheus-bar%C3%A3o-fiorin-7869b6187/"
-                                target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/matheus.fiorin.7" target="_blank"><i
-                                    class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/matheus_fiorin" target="_blank"><i class="fa fa-twitter"
-                                    aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End footer -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
-</body>
-
+    <script src="js/highlight.min.js"></script>
+    <script src="js/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script
+      src="js/ace-mode-json.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="js/ace-theme-github.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="js/page.js"></script>
+  </body>
 </html>
