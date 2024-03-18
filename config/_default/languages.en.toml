@@ -1,0 +1,22 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "non auspicious"
+enableSearch = false
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+description = "a website about code, photography, philosophy, and whatever else I want"
+logo = "secondaryLogo.png"
+secondaryLogo = "logo.png"
+disableTextInHeader = true
+
+[author]
+name = "Matheus Barão Fiorin"
+image = "profile.jpeg"
+headline = "senior software engineer"
+bio = "Passionate about music, software engineering, philosophy, and some spontaneous hyperfocus here and there. Get to know me better: <strong>https://monadnock.net/epicurus/letter.html</strong> and <strong>https://peps.python.org/pep-0020/</strong>."
+links = [ { github = "https://github.com/matheusfiorin" }, { linkedin = "https://www.linkedin.com/in/matheus-barao-fiorin/?locale=en_US" }, { instagram = "https://www.instagram.com/matheusbaraofiorin/" } ]

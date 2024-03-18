@@ -1,0 +1,5 @@
+baseURL = 'https://matheusfiorin.github.io/'
+languageCode = 'en-us'
+title = 'matheusfiorin.github.io'
+theme = 'blowfish'
+mainSections = ['posts']
