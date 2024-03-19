@@ -29,7 +29,7 @@ homepageImage = "IMG_3220.jpg"
 
 [article]
 showDate = true
-showViews = false
+showViews = true
 showLikes = false
 showDateOnlyInArticle = false
 showDateUpdated = false
@@ -89,8 +89,6 @@ showTableOfContents = true
 groupByYear = false
 cardView = false
 cardViewScreenWidth = false
-
-[firebase]
 
 [fathomAnalytics]
 
