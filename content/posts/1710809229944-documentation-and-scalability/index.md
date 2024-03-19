@@ -9,7 +9,7 @@ heroStyle: "big"
 showSummary: true
 showTaxonomies: true
 slug: "documentation-and-scalability"
-tags: ["code", "thoughts"]
+tags: ["documents", "thoughts"]
 ---
 <h2 class="mt-0">through the space</h2>
 {{< spotify type="track" id="1ujxjsoNvh4XgS2fUNwkZ2" width="auto" height="100" >}}
