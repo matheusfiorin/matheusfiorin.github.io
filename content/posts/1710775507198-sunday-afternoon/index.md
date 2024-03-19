@@ -8,11 +8,11 @@ showHero: true
 heroStyle: "big"
 showSummary: true
 showTaxonomies: true
-slug: "/sunday-afternoon"
+slug: "sunday-afternoon"
 tags: ["photos", "thoughts"]
 ---
 <h2 class="mt-0">not everything feels like the way it should</h2>
-{{< spotify type="track" id="54qG9hpUjLgkgTJQ9qvB1P" width="100%" height="100" >}}
+{{< spotify type="track" id="54qG9hpUjLgkgTJQ9qvB1P" width="auto" height="100" >}}
 
 
 # Instrospection and over-qualification
