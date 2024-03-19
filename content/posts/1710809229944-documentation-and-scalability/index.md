@@ -1,6 +1,6 @@
 ---
 title: "documentation & scalability"
-date: 2024-03-18
+date: 2024-03-19
 draft: false
 description: "a description"
 summary: "I talk about writing docs and my current software engineering perspective about it, food for thoughts I would say."
