@@ -8,6 +8,7 @@ showHero: true
 heroStyle: "big"
 showSummary: true
 showTaxonomies: true
+slug: "/sunday-afternoon"
 tags: ["photos", "thoughts"]
 ---
 <h2 class="mt-0">not everything feels like the way it should</h2>
