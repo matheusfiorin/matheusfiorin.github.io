@@ -8,7 +8,7 @@ showHero: true
 heroStyle: "big"
 showSummary: true
 showTaxonomies: true
-slug: "coastline"
+slug: "laziness"
 tags: ["laziness", "recursion", "concepts"]
 ---
 <h2 class="mt-0">∞</h2>
